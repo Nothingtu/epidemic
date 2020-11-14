@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html lang="en" xmlns:th = "http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>dataList</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <h3>疫情实时追踪</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>地区</th>
+                    <th>现有确诊</th>
+                    <th>累计确诊</th>
+                    <th>治愈</th>
+                    <th>死亡</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each ="dataBean : ${dataList}">
+                    <td th:text = "${dataBean.name}">name</td>
+                    <td th:text = "${dataBean.confirm}">confirm</td>
+                    <td th:text = "${dataBean.nowConfirm}">nowConfirm</td>
+                    <td th:text = "${dataBean.heal}">heal</td>
+                    <td th:text = "${dataBean.dead}">dead</td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>
