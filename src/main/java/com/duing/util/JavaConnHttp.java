@@ -58,7 +58,7 @@ public class JavaConnHttp {
     private String dxUrl = "https://ncov.dxy.cn/ncovh5/view/pneumonia?from=timeline";
 
     //用java代码模拟doGet请求
-    private String doGet(String urlStr) {
+    public static String doGet(String urlStr) {
         StringBuffer stringBuffer = new StringBuffer();
         HttpURLConnection httpURLConnection = null;
         BufferedReader bufferedReader = null;

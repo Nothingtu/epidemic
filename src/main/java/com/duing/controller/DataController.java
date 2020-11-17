@@ -23,7 +23,7 @@ public class DataController {
     @GetMapping("/")
     public String dataList(Model model,String from){
         List<DataBean> dataList ;
-        if(from.equals("t")) dataList = javaConnHttp.getBeansFromTenxun();
+        if("t".equals(from)) dataList = javaConnHttp.getBeansFromTenxun();
         else dataList = dataService.getDataBeanList();
         model.addAttribute("dataList",dataList);
         return "index";
