@@ -3,3 +3,6 @@ spring:
     url: jdbc:mysql://localhost:3306/epidemic?userSSL=false&characterEncoding=UTF-8&serverTimezone=CST
     username: root
     password: root18268174991@
+
+  messages:
+    basename: i18n.index

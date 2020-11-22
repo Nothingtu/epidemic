@@ -2,19 +2,21 @@
     <html lang="en" xmlns:th = "http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
-        <title>dataList</title>
+        <title th:text="#{index.title}">国内疫情</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     </head>
     <body>
-        <h3>疫情实时追踪</h3>
+        <h3 th:text="#{index.h3}">疫情实时追踪</h3>
+        <a class="btn btn-sm" th:href="@{/(lan='zh_CN')}">中文</a>
+        <a class="btn btn-sm" th:href="@{/(lan='en_US')}">English</a>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>地区</th>
-                    <th>现有确诊</th>
-                    <th>累计确诊</th>
-                    <th>治愈</th>
-                    <th>死亡</th>
+                    <th><p th:text="#{index.table.name1}">地区</p></th>
+                    <th><p th:text="#{index.table.name2}">现有确诊</p></th>
+                    <th><p th:text="#{index.table.name3}">累计确诊</p></th>
+                    <th><p th:text="#{index.table.name4}">治愈</p></th>
+                    <th><p th:text="#{index.table.name5}">死亡</p></th>
                 </tr>
             </thead>
             <tbody>

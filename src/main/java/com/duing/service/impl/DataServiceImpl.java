@@ -2,14 +2,11 @@ package com.duing.service.impl;
 
 import com.duing.entity.DataBean;
 import com.duing.mapper.DataMapper;
-import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.*;
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class DataServiceImpl {
@@ -18,7 +15,7 @@ public class DataServiceImpl {
 
     //通过调用mapper对象查询数据库里的数据
     public List<DataBean> getDataBeanList(){
-        return dataMapper.selectList();
+        return  dataMapper.selectList();
     }
 
 

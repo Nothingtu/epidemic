@@ -5,11 +5,10 @@ import com.duing.entity.DataBean;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.springframework.stereotype.Component;
+
 
 import java.util.List;
 
-@Component
 public interface DataMapper {
 
    @Select("SELECT ID ,NAME,CONFIRM,NOWCONFIRM,DEAD,HEAL FROM EPIDEMIC")

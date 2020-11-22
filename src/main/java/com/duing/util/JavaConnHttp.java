@@ -35,6 +35,7 @@ public class JavaConnHttp {
         System.out.println("第一次初始化了");
         List<DataBean> list = getBeansFromDx();
         for(DataBean dataBean : list){
+            System.out.println(dataBean.toString());
             dataMapper.insert(dataBean);
         }
     }
@@ -47,12 +48,13 @@ public class JavaConnHttp {
         dataMapper.delete();
         List<DataBean> list = getBeansFromDx();
         for(DataBean dataBean : list){
+
             dataMapper.insert(dataBean);
         }
     }
 
     //腾讯疫情实时动态
-    private String tenxunUrl = "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5";
+    private static String tenxunUrl = "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5";
 
     //丁香疫情实时动态
     private String dxUrl = "https://ncov.dxy.cn/ncovh5/view/pneumonia?from=timeline";
@@ -99,7 +101,7 @@ public class JavaConnHttp {
     }
 
     //设计一个方法，直接通过URL获取json格式的字符串
-    public List<DataBean> getBeansFromTenxun() {
+    public static List<DataBean> getBeansFromTenxun() {
         String str = doGet(tenxunUrl);
 
         Gson gson = new Gson();
@@ -159,7 +161,7 @@ public class JavaConnHttp {
         for (int i = 0; i < list.size(); i++) {
             Map beanMap = (Map) list.get(i);
 
-            String name = (String) beanMap.get("provinceName");
+            String name = (String) beanMap.get("provinceShortName");
             Integer confirm = (int) ((double) beanMap.get("confirmedCount"));
             Integer nowConfirm = (int) ((double) beanMap.get("currentConfirmedCount"));
             Integer dead = (int) ((double) beanMap.get("deadCount"));

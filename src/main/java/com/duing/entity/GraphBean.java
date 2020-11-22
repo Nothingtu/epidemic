@@ -3,9 +3,11 @@ package com.duing.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
-public class GraphBean {
+public class GraphBean implements Serializable {
 
     private String date;
     private Integer confirm;
